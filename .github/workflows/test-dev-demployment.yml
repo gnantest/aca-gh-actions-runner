@@ -16,7 +16,6 @@ jobs:
 
   DeployDev:
     name: Deploy to Dev 
-    if: github.event_name == 'pull_request'
     needs: [Build]
     runs-on: self-hosted
     environment: 
