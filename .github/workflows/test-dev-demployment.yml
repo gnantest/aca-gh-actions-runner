@@ -1,0 +1,27 @@
+name: Test deployment with Environment
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  Build:
+    runs-on: self-hosted
+
+    steps:
+      - run: |
+          az login --identity -u $MSI_CLIENT_ID
+          az account show
+          az group list --query '[].name' -o tsv
+        name: Execute az cli sample commands
+
+    DeployDev:
+    name: Deploy to Dev 
+    if: github.event_name == 'pull_request'
+    needs: [Build]
+    runs-on: self-hosted
+    environment: 
+      name: Development
+
+    steps:
+      - name: Deploy
+        run: echo I am deploying! 
