@@ -14,7 +14,7 @@ jobs:
           az group list --query '[].name' -o tsv
         name: Execute az cli sample commands
 
-    DeployDev:
+  DeployDev:
     name: Deploy to Dev 
     if: github.event_name == 'pull_request'
     needs: [Build]
