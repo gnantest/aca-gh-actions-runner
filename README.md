@@ -1,3 +1,5 @@
+[![Test deployment with Environment](https://github.com/gnantest/aca-gh-actions-runner/actions/workflows/test-dev-demployment.yml/badge.svg)](https://github.com/gnantest/aca-gh-actions-runner/actions/workflows/test-dev-demployment.yml)
+
 # GitHub organization self-hosted runners in Azure Container Apps
 
 This repository is a starter for hosting an organization's GitHub Actions runners in Azure Container Apps.  
